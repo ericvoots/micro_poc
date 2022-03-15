@@ -1,0 +1,4 @@
+# where data is stored
+data_location = "/data/"
+
+# where model binaries should be stored
