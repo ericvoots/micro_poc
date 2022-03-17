@@ -1,4 +1,16 @@
+# please note these are short paths based on the docker container set with -v flags
+
 # where data is stored
 data_location = "/data/"
 
 # where model binaries should be stored
+model_location = "/model_binaries/"
+
+# model params is where any hyperparameters are stored for each model
+params_location = "/modelparams/"
+
+# stream prefixes
+stream_prefixes = ["z5"]
+
+# all models will have the prefix of the full stream name
+# ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
