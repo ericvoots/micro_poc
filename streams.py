@@ -14,8 +14,10 @@ class streams(object):
     
     def __init__(self, config_file):
         
-        self.config = config_file
-       
+        self.config = toml.load(config_file)
+        self.streams = []
+        
+        print(f"current setup is {self.config}")
         
     def get_streams(self):
         
@@ -24,8 +26,9 @@ class streams(object):
     
 if __name__ == "__main__":
     
-    get_streams = streams()
-    streams.config_file = "config.toml"
+    # can probably just make this an argument later with argparse and passed in from jenkins or something
+    get_streams = streams(config_file="config.toml")
+
     
     
     
