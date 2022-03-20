@@ -10,7 +10,16 @@ model_location = "/model_binaries/"
 params_location = "/modelparams/"
 
 # stream prefixes
-stream_prefixes = ["z5"]
+stream_prefixes = ["c2", "c5"]
+
+# email for prizes, use this if you want your money
+email = "freemoney@free.com"
 
 # all models will have the prefix of the full stream name
 # ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
+
+# update schedule, use these as flags either daily, weekly or monthly alternative use a separate process and let jenkins cron handle it
+
+model_schedule = "weekly"
+
+stream_schedule = "weekly"
