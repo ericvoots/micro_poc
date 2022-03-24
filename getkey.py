@@ -1,5 +1,5 @@
 '''
-this is for gettinga  key for submissions, move this to a class of some sort later
+this is for gettinga  key for submissions, move this to a class of some sort later probably
 '''
 
 from microprediction import new_key, MicroWriter
@@ -12,4 +12,4 @@ print(write_key)
 
 print(mw)
 
-# or just save to file, not high priority
+# or just save to file, not high priority as this is only done once i think

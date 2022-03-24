@@ -15,6 +15,9 @@ stream_prefixes = ["c2", "c5"]
 # email for prizes, use this if you want your money
 email = "freemoney@free.com"
 
+# max lags, controls how many features are created to limit computation time
+max_lags = 24
+
 # all models will have the prefix of the full stream name
 # ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
 
