@@ -4,10 +4,13 @@
 data_location = "/data/"
 
 # where model binaries should be stored
-model_location = "/model_binaries/"
+model_location = "/modelbinaries/"
 
 # model params is where any hyperparameters are stored for each model
 params_location = "/modelparams/"
+
+# where to store processed data after creating features
+processed_data_location = "/processeddata/"
 
 # stream prefixes
 stream_prefixes = ["c2", "c5"]
@@ -15,8 +18,14 @@ stream_prefixes = ["c2", "c5"]
 # email for prizes, use this if you want your money
 email = "freemoney@free.com"
 
-# max lags, controls how many features are created to limit computation time
-max_lags = 24
+# max moving average lags, controls how many features are used to create a moving average to limit computation time
+max_ma_lags = 24
+
+# how many lags to limit on % changes 
+max_diff_lags = 5
+
+# what forecast horizons to do, 1 lag is 15 minutes so 4 is an hour
+forecast_horizons = [3, 4]
 
 # all models will have the prefix of the full stream name
 # ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
