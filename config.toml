@@ -13,7 +13,9 @@ params_location = "/modelparams/"
 processed_data_location = "/processeddata/"
 
 # stream prefixes
-stream_prefixes = ["c2", "c5"]
+# all models will have the prefix of the full stream name
+# ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
+stream_prefixes = ["c2", "c5", "fathom"]
 
 # email for prizes, use this if you want your money
 email = "freemoney@free.com"
@@ -27,11 +29,15 @@ max_diff_lags = 5
 # what forecast horizons to do, 1 lag is 15 minutes so 4 is an hour
 forecast_horizons = [3, 4]
 
-# all models will have the prefix of the full stream name
-# ie. z5_cryptoxxx will store the model as z5_cryptoxxx.pkl and data as z5_cryptoxxx.csv or json
+
+# used for making sure the target is handled correctly when the values are not difference, use the stream prefix to handle
+# that way the target can then be defined as the diff and not the raw value, and then prediction handled accordingly
+stream_raw_values = ["electricity"]
 
 # update schedule, use these as flags either daily, weekly or monthly alternative use a separate process and let jenkins cron handle it
+# if someone else wants to add code to do a different schedule feel free or just alter the
 
+# based on cront
 model_schedule = "weekly"
 
-stream_schedule = "weekly"
+stream_schedule = {hour="*",minute=1}

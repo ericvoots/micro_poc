@@ -4,20 +4,23 @@ import pandas as pd
 
 import toml
 
+from celery import Task
 from microprediction import MicroReader
 
 '''
 used for getting streams to be used in the crawler, then saved into a json file.
 '''
 
-class streams(object):
+class streams(Task):
     """_summary_
     used for getting what streams are needed to be used in the crawlers and models
     """
+    # don't need to save results
+    ignore_result = True
     
     def __init__(self, config_file):
         
-        self.config = toml.load(config_file)
+        self.config = config_file
         self.streams = {}
         self.mr = MicroReader()
         
@@ -36,4 +39,9 @@ class streams(object):
         
         with open("streams.json", "w") as outfile:
             json.dump(self.streams, outfile)
-  
+    
+    def run(self):
+        """_summary_
+        this will run get streams or any new functions added
+        """
+        self.get_streams()
